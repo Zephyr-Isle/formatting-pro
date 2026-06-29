@@ -15,3 +15,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom audio CSS configuration
 - English and Chinese language support
 - Admin settings page for plugin configuration
+- Full Flarum v2 compatibility
+- MediaPack integration for better media embedding

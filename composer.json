@@ -12,8 +12,7 @@
     "type": "flarum-extension",
     "license": "MIT",
     "require": {
-        "flarum/core": "^2.0.0",
-        "fof/formatting": "^2.0.0"
+        "flarum/core": "^2.0.0"
     },
     "support": {
         "issues": "https://github.com/zephyr-isle/fof-formatting-pro/issues",
@@ -22,8 +21,7 @@
     "authors": [
         {
             "name": "zephyrisle",
-            "email": "zephyrisle@duck.com",
-            "role": "Developer"
+            "email": "zephyrisle@duck.com"
         }
     ],
     "autoload": {

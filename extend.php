@@ -16,6 +16,7 @@ use Flarum\Extend;
 use Flarum\Frontend\Document;
 use Flarum\Settings\Event\Saved;
 use s9e\TextFormatter\Configurator;
+use s9e\TextFormatter\Configurator\Bundles\MediaPack;
 
 return [
     (new Extend\Frontend('forum'))
@@ -39,29 +40,23 @@ return [
         ->configure(function (Configurator $configurator) {
             $settings = resolve('flarum.settings');
 
-            // Auto Audio - Convert audio URLs to HTML5 audio players
-            if ($settings->get('zephyrisle-fof-formatting-pro.plugin.autoaudio')) {
-                $configurator->Autoimage;
-                $configurator->MediaEmbed->add('audio');
-            }
+            foreach (Api\ForumResourceFields::PLUGINS as $plugin) {
+                $enabled = $settings->get('zephyrisle-fof-formatting-pro.plugin.'.strtolower($plugin));
 
-            // NetEase Cloud Music
-            if ($settings->get('zephyrisle-fof-formatting-pro.plugin.netease')) {
-                $configurator->MediaEmbed->add('netease');
-                
-                // Configure NetEase Cloud Music embed
-                if (isset($configurator->MediaEmbed)) {
-                    $configurator->MediaEmbed->add('163.com');
-                }
-            }
-
-            // Bilibili
-            if ($settings->get('zephyrisle-fof-formatting-pro.plugin.bilibili')) {
-                $configurator->MediaEmbed->add('bilibili');
-                
-                // Configure Bilibili embed
-                if (isset($configurator->MediaEmbed)) {
-                    $configurator->MediaEmbed->add('bilibili.com');
+                if ($enabled) {
+                    if ($plugin == 'NetEase' || $plugin == 'Bilibili') {
+                        // Initialize MediaPack for these plugins
+                        (new MediaPack())->configure($configurator);
+                        
+                        if ($plugin == 'NetEase') {
+                            $configurator->MediaEmbed->add('music.163.com');
+                        } elseif ($plugin == 'Bilibili') {
+                            $configurator->MediaEmbed->add('bilibili.com');
+                        }
+                    } elseif ($plugin == 'AutoAudio') {
+                        // Auto Audio - Convert audio URLs to HTML5 audio players
+                        $configurator->MediaEmbed->add('audio');
+                    }
                 }
             }
         }),

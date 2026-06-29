@@ -67,13 +67,12 @@ audio {
 ## Links
 
 - [Packagist](https://packagist.org/packages/zephyrisle/fof-formatting-pro)
-- [GitHub](https://github.com/zephyr-isle/fof-formatting-pro)
+- [GitHub](https://github.com/Zephyr-Isle/fof-formatting-pro)
 - [Flarum Discuss](https://discuss.flarum.org/)
 
 ## Requirements
 
 - Flarum 2.0+
-- fof/formatting 2.0+
 
 ## License
 
@@ -83,4 +82,4 @@ MIT
 
 Based on [FoF Formatting](https://github.com/FriendsOfFlarum/formatting) by FriendsOfFlarum.
 
-An extension by [zephyrisle](https://github.com/zephyr-isle).
+An extension by [zephyrisle](https://github.com/Zephyr-Isle).
