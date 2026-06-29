@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Zephyrisle\FoF\FormattingPro;
+namespace Zephyrisle\FormattingPro;
 
 use Flarum\Api\Resource;
 use Flarum\Extend;
@@ -17,6 +17,7 @@ use Flarum\Frontend\Document;
 use Flarum\Settings\Event\Saved;
 use s9e\TextFormatter\Configurator;
 use s9e\TextFormatter\Configurator\Bundles\MediaPack;
+use Zephyrisle\FormattingPro\Api\ForumResourceFields;
 
 return [
     (new Extend\Frontend('forum'))

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Zephyrisle\FoF\FormattingPro\Api;
+namespace Zephyrisle\FormattingPro\Api;
 
 use Flarum\Api\Context;
 use Flarum\Api\Schema;

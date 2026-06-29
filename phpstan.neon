@@ -1,0 +1,10 @@
+includes:
+    - vendor/flarum/phpstan/extension.neon
+
+parameters:
+    level: 6
+    paths:
+        - src
+    ignoreErrors:
+        # Allow dynamic property access
+        - '#Access to an undefined property#'

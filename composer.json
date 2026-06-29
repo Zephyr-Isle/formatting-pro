@@ -12,26 +12,28 @@
     "type": "flarum-extension",
     "license": "MIT",
     "require": {
+        "php": "^8.3",
         "flarum/core": "^2.0.0"
     },
     "support": {
-        "issues": "https://github.com/zephyr-isle/fof-formatting-pro/issues",
-        "source": "https://github.com/zephyr-isle/fof-formatting-pro"
+        "issues": "https://github.com/Zephyr-Isle/fof-formatting-pro/issues",
+        "source": "https://github.com/Zephyr-Isle/fof-formatting-pro"
     },
     "authors": [
         {
             "name": "zephyrisle",
-            "email": "zephyrisle@duck.com"
+            "email": "zephyrisle@example.com",
+            "homepage": "https://github.com/Zephyr-Isle"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Zephyrisle\\FoF\\FormattingPro\\": "src/"
+            "Zephyrisle\\FormattingPro\\": "src/"
         }
     },
     "extra": {
         "branch-alias": {
-            "1.x": "1.x-dev"
+            "2.x": "2.x-dev"
         },
         "flarum-extension": {
             "title": "FoF Formatting Pro",
@@ -46,7 +48,8 @@
             "modules": {
                 "githubActions": true
             }
-        }
+        },
+        "database-support": ["mysql", "sqlite", "pgsql"]
     },
     "require-dev": {
         "flarum/phpstan": "^2.0.0"

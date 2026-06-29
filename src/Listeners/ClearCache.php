@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Zephyrisle\FoF\FormattingPro\Listeners;
+namespace Zephyrisle\FormattingPro\Listeners;
 
 use Flarum\Settings\Event\Saved;
 
@@ -18,8 +18,8 @@ class ClearCache
     public function handle(Saved $event): void
     {
         foreach ($event->settings as $key => $setting) {
-            if (strpos($key, 'zephyrisle-fof-formatting-pro.plugin.') === 0 || 
-                strpos($key, 'zephyrisle-fof-formatting-pro.audio_css') === 0) {
+            if (str_starts_with($key, 'zephyrisle-fof-formatting-pro.plugin.') || 
+                str_starts_with($key, 'zephyrisle-fof-formatting-pro.audio_css')) {
                 resolve('flarum.formatter')->flush();
 
                 return;
