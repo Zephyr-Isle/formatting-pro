@@ -3,7 +3,7 @@
 /*
  * This file is part of zephyrisle/fof-formatting-pro.
  *
- * Copyright (c) 2024 zephyrisle.
+ * Copyright (c) 2026 zephyrisle.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
