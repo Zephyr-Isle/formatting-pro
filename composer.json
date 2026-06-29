@@ -1,0 +1,65 @@
+{
+    "name": "zephyrisle/fof-formatting-pro",
+    "description": "Enhanced Flarum formatting extension with audio support, Chinese platforms (NetEase Cloud Music, Bilibili), and custom audio CSS",
+    "keywords": [
+        "flarum",
+        "formatting",
+        "audio",
+        "netease",
+        "bilibili",
+        "chinese"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^2.0.0",
+        "fof/formatting": "^2.0.0"
+    },
+    "support": {
+        "issues": "https://github.com/zephyr-isle/fof-formatting-pro/issues",
+        "source": "https://github.com/zephyr-isle/fof-formatting-pro"
+    },
+    "authors": [
+        {
+            "name": "zephyrisle",
+            "email": "zephyrisle@duck.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zephyrisle\\FoF\\FormattingPro\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "1.x": "1.x-dev"
+        },
+        "flarum-extension": {
+            "title": "FoF Formatting Pro",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-music",
+                "backgroundColor": "#ff6b6b",
+                "color": "#fff"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "githubActions": true
+            }
+        }
+    },
+    "require-dev": {
+        "flarum/phpstan": "^2.0.0"
+    },
+    "scripts": {
+        "analyse:phpstan": "phpstan analyse",
+        "clear-cache:phpstan": "phpstan clear-result-cache"
+    },
+    "scripts-descriptions": {
+        "analyse:phpstan": "Run static analysis"
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}

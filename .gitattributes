@@ -1,0 +1,18 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# The above will handle all files NOT found below
+/dist -text
+export -text
+*.phar -text
+*.exe -text
+*.so -text
+*.dll -text
+*.img -text
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
+*.ico -text
+*.svg -text
+*.pdf -text
