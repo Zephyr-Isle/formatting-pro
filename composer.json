@@ -38,6 +38,7 @@
         "flarum-extension": {
             "title": "FoF Formatting Pro",
             "category": "feature",
+            "id": "zephyrisle-fof-formatting-pro",
             "icon": {
                 "name": "fas fa-music",
                 "backgroundColor": "#ff6b6b",
