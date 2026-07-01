@@ -43,8 +43,14 @@ return [
 
             // Auto Audio - Convert audio URLs to HTML5 audio players
             if ($settings->get('zephyrisle-formatting-pro.plugin.autoaudio', true)) {
-                $configurator->Autoimage;
-                $configurator->MediaEmbed->add('audio');
+                $configurator->tags->add('AUTOAUDIO')->attributes->add('src');
+                $configurator->tags['AUTOAUDIO']->template =
+                    '<audio controls="" preload="none" src="{@src}"><a href="{@src}"><xsl:value-of select="@src"/></a></audio>';
+                
+                $configurator->Preg->match(
+                    '((?:https?://)[^\\s<>"\']+\\.(?:mp3|m4a|ogg|wav|flac|aac|opus)(?:\\?[^\\s<>"\']*)?)',
+                    'AUTOAUDIO'
+                );
             }
 
             // NetEase Cloud Music
