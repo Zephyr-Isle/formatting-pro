@@ -48,7 +48,7 @@ return [
                     '<audio controls="" preload="none" src="{@src}"><a href="{@src}"><xsl:value-of select="@src"/></a></audio>';
                 
                 $configurator->Preg->match(
-                    '((?:https?://)[^\\s<>"\']+\\.(?:mp3|m4a|ogg|wav|flac|aac|opus)(?:\\?[^\\s<>"\']*)?)',
+                    '#(?<src>https?://[^\\s<>"\']+\\.(?:mp3|m4a|ogg|wav|flac|aac|opus)(?:\\?[^\\s<>"\']*)?)#i',
                     'AUTOAUDIO'
                 );
             }
@@ -63,7 +63,7 @@ return [
                             "!music\\.163\\.com/#/(?<mode>song|album|playlist)\\?id=(?<id>\\d+)!",
                             "!music\\.163\\.com/m/(?<mode>song|album|playlist)\\?id=(?<id>\\d+)!",
                             "!music\\.163\\.com/(?<mode>song|album|playlist)\\?id=(?<id>\\d+)!",
-                            "!music\\.163\\.com/(?<mode>song|album|playlist)/(?<id>\\d+)/?(?:\\?userid=\\d+)?",
+                            "!music\\.163\\.com/(?<mode>song|album|playlist)/(?<id>\\d+)/?(?:\\?userid=\\d+)?!",
                         ],
                         'choose' => [
                             'when' => [
